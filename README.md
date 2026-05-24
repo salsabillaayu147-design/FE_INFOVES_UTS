@@ -9,7 +9,7 @@ Aplikasi web full-stack yang dirancang untuk mengelola data kegiatan festival (I
 # 🔗 Link Demo Live
 
 - **Frontend (Vercel):** https://fe-infoves-uts-i1ah.vercel.app
-- **Backend API (Railway):** https://https://beinfoves-production.up.railway.app
+- **Backend API (Railway):** https://beinfoves-production.up.railway.app
 
 ---
 
