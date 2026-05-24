@@ -1,73 +1,121 @@
-# React + TypeScript + Vite
+# Invofest Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Tugas Mata Kuliah Pemrograman Web 2 - Aplikasi Manajemen Event Festival, Kategori, dan Pembicara.
 
-Currently, two official plugins are available:
+Aplikasi web full-stack yang dirancang untuk mengelola data kegiatan festival (Invofest), meliputi manajemen data **Event** (Seminar, Workshop, Competition, Talkshow), data **Kategori**, serta data **Pembicara (Speaker)**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+# 🔗 Link Demo Live
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend (Vercel):** https://fe-infoves-uts-i1ah.vercel.app
+- **Backend API (Railway):** https://https://beinfoves-production.up.railway.app
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# ✨ Fitur Utama
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 1. Autentikasi & Proteksi Halaman
+- Login & Register menggunakan validasi NIM dan Password.
+- Protected Routes untuk mencegah user yang belum login masuk ke Dashboard.
+- State login disimpan menggunakan Zustand & localStorage.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 2. Dashboard Dinamis
+- Sidebar navigasi interaktif.
+- Active menu otomatis berdasarkan route halaman.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 3. Manajemen Kategori (CRUD)
+- Menampilkan data kategori event.
+- Menambah kategori baru.
+- Mengedit kategori.
+- Menghapus kategori.
+
+## 4. Manajemen Pembicara / Speaker (CRUD)
+- Menampilkan data pembicara seminar.
+- Menambahkan data speaker.
+- Mengedit speaker.
+- Menghapus speaker.
+
+## 5. Manajemen Event (CRUD)
+- Menampilkan seluruh data event festival.
+- Relasi data antara Event, Kategori, dan Speaker menggunakan PostgreSQL.
+- Menambah event baru.
+- Mengedit event.
+- Menghapus event.
+
+## 6. Halaman Biodata Pengembang
+- Menampilkan profil mahasiswa pengembang aplikasi.
+- Menampilkan foto dan data diri.
+
+---
+
+# 🛠️ Tech Stack
+
+## Frontend (Client)
+
+- Framework: React.js (Vite + TypeScript)
+- Routing: React Router DOM v6
+- Form Handling: React Hook Form
+- Validation: Zod Schema Validation
+- State Management: Zustand
+- Styling: Tailwind CSS
+
+## Backend (Server)
+
+- Runtime & Framework: Node.js + Express.js (TypeScript)
+- ORM: Prisma ORM
+- Database: Supabase PostgreSQL
+- Deployment: Railway (Backend) & Vercel (Frontend)
+
+---
+
+# 📁 Struktur Folder Frontend
+
+```bash
+src/
+├── components/
+├── dashboard/
+├── layout/
+├── pages/
+├── store/
+├── routes/
+└── types/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 📁 Struktur Folder Backend
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+src/
+├── controllers/
+├── routes/
+├── lib/
+└── types/
 ```
+
+---
+
+# ⚙️ Cara Menjalankan Project
+
+## Frontend
+
+```bash
+npm install
+npm run dev
+```
+
+## Backend
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+# 👩‍💻 Developer
+
+**Salsabilla Ayu Rizkia**  
+Mahasiswa Teknik Informatika  
+Universitas Harkat Negeri
